@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "traceguard"
+version = "0.1.0"
+description = "TRACEGUARD implementation"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26,<3", "scipy>=1.11,<2", "matplotlib>=3.8,<4"]
+
+[project.scripts]
+traceguard-report = "traceguard.common:report"
+traceguard = "traceguard.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

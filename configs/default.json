@@ -1,0 +1,9 @@
+{
+  "seed": 0,
+  "workflows": 12,
+  "budget": 300,
+  "wall_seconds": 60,
+  "max_candidates": 10000,
+  "max_delay": 4,
+  "deadline": 4
+}
