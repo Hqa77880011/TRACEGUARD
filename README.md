@@ -43,6 +43,19 @@ Reduction repeatedly removes faults or restores inverted nominal adjacent order 
 
 `configs/default.json` controls seed, corpus bound, delay magnitude, discovery executions and wall-clock ceiling. `workflows.csv` reports temporal-fault recall (distinct violation predicate IDs), first-failure executions, class coverage, obligation-transition coverage, replay success, reduced event count and CI minutes. First failure is null when none is found. `counterexamples.json` carries reduced schedules and monitor states. Comparison CSV/JSON and PNG/SVG plots use generated measurements. For larger workflows, corpus truncation limits the scope of coverage; it never implies exhaustive temporal verification.
 
+## Registered compact reproduction setting
+
+Eight finite frozen event workflows, a prespecified 2,000-candidate universe, 200 discovery calls and a 30-second wall ceiling. Recall refers to that declared corpus, including its replayed reference outcomes.
+
+Run from the repository root after installation. The following commands use the registered setting; they are provided for execution and have not been run as part of the source review.
+
+```bash
+traceguard prepare --config configs/reproduce.json --data data/reproduce
+traceguard compare --config configs/reproduce.json --data data/reproduce --output runs/reproduce
+```
+
+This setting needs no external dataset or pretrained weights. Generated inputs and declared fault/shift laws define the finite task; reported quantities retain that provenance.
+
 ## Multiple seeds
 
 Run matched configurations with different seeds in separate directories, then aggregate the generated metric files:
